@@ -1,27 +1,27 @@
-<?php $this->layout('website');?>
+<!doctype html>
+<html lang="en">
 
-<?php $this->start('sidebar')?>
-<div class="top-10">
-	<h3>Top 10 Buren</h3>
-	<ol>
-		<li>Pieter</li>
-		<li>Achmed</li>
-		<li>Rosa</li>
-		<li>Alper</li>
-		<li>Daan</li>
-		<li>Sjoerd</li>
-		<li>Mo</li>
-		<li>Chantal</li>
-		<li>Floor</li>
-		<li>Duneya</li>
-	</ol>
-</div>
-<?php $this->stop()?>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>What's My Next Movie</title>
+	<link rel="stylesheet" href="<?php echo site_url('/css/style.css') ?>" media="all">
+	<?php if ($this->section('css')) : ?>
+		<?php echo $this->section('css') ?>
+	<?php endif; ?>
+</head>
 
-<h1>Welkom</h1>
+<body>
+	<?php if ($this->section('nav_notloggedin')) : ?>
+		<?php echo $this->section('nav_notloggedin') ?>
+	<?php else : ?>
+		<?php echo $this->fetch('_nav_notloggedin') ?>
+	<?php endif ?>
 
-<p>Hier komt later veel meer informatie uit de database</p>
+	<header id="homeheader">
+		
+	</header>
 
-
-
-
+	<script src="<?php echo site_url('/js/nav.js') ?>"></script>
+</body>

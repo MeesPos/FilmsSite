@@ -18,11 +18,7 @@
 
 .logo-text{
     color: white;
-}
-
-#logomobile{
-    display: none;
-    height: 65px;
+    margin-left: -12.5vw;
 }
 
 .navbar-ul{
@@ -59,23 +55,15 @@
     .navbar-ul{
         width: 60vw!important;
     }
+    
+    .logo-text{
+        margin-left: -3.5vw;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    #bodywebsite{
-        margin-top: 0!important;
-        width: 100%!important;
-        box-shadow: none!important;
-        border-radius: 0!important;
-        height: 400vh;
-    }
-
-    #logo{
-        display: none;
-    }
-
-    #logomobile{
-        display: block;
+    .logo-text{
+        margin-left: 0;
     }
 
     body{

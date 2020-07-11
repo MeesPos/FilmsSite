@@ -19,8 +19,20 @@
 		<?php echo $this->fetch('_nav_notloggedin') ?>
 	<?php endif ?>
 
-	<header id="homeheader">
-		
+	<header id="homeheader" style="background: url(<?php echo site_url('/img/homeback.png') ?>);">
+		<div class="home-intro">
+			<div class="home-information">
+				<h1>What's my next Movie</h1>
+				<div class="homedesc">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod incidunt ex sapiente repellat autem. Voluptatem,
+						tenetur qui, explicabo sit dolor voluptas adipisci, delectus dolores illum porro possimus excepturi
+						odit numquam!</p>
+				</div>
+				<a href="">
+					<button>Get Started</button>
+				</a>
+			</div>
+		</div>
 	</header>
 
 	<script src="<?php echo site_url('/js/nav.js') ?>"></script>

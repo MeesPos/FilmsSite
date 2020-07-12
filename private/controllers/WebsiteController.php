@@ -14,7 +14,7 @@ class WebsiteController {
 
 	public function home() {
 
-		$movieGet = TestFilm();
+		$movieGet = getHomePopular();
 
 		$template_engine = get_template_engine();
 		echo $template_engine->render('homepage', ['popMovies' => $movieGet]);

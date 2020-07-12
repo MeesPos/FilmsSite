@@ -36,7 +36,19 @@
 	</header>
 
 	<section id="movies">
-		<?php echo $popMovies['title']; ?>
+		<?php
+		$arrayCount = 0;
+		foreach ($popMovies as $row) {
+			foreach ($row as $movieArray) {
+				echo $movieArray['title'];
+				if ($arrayCount >= 5) {
+					exit;
+				}
+				$arrayCount += 1;
+			}
+			// print_r($row);	
+		} 
+		?>
 	</section>
 
 	<script src="<?php echo site_url('/js/nav.js') ?>"></script>

@@ -85,17 +85,20 @@ function current_route_is($name)
 	return false;
 }
 
-function ApiConnection()
+/**
+ * Get the popular movies at this moment for Home page 
+ * 
+ * @return string
+ * */
+function getHomePopular()
 {
-	$url = 'https://api.themoviedb.org/3/movie/321?api_key=4f4fc5ebbc928ddfae642382c709683b';
+	$url = 'https://api.themoviedb.org/3/movie/popular?api_key=4f4fc5ebbc928ddfae642382c709683b&total_results=5';
 
-	// HTTP client aanmaken
-	$client = new \GuzzleHttp\Client();
-
-	// Request doen
+	$client   = new \GuzzleHttp\Client();
 	$response = $client->request('GET', $url);
 	$json	  = $response->getBody();
 
-	// JSON omzetten in een array met json_decode()
-	$film	= json_decode($json, true);
+	$popularFilms = json_decode($json, true);
+	print_r($popularFilms);
+	return $popularFilms;
 }

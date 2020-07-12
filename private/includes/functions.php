@@ -85,6 +85,11 @@ function current_route_is($name)
 	return false;
 }
 
+/**
+ * Get the connection with the API
+ *
+ * @return string
+ */
 function ApiConnection()
 {
 	$url = 'https://api.themoviedb.org/3/movie/321?api_key=4f4fc5ebbc928ddfae642382c709683b';
@@ -98,4 +103,36 @@ function ApiConnection()
 
 	// JSON omzetten in een array met json_decode()
 	$film	= json_decode($json, true);
+}
+
+/**
+ * Get the popular movies at this moment for Home page 
+ * 
+ * @return string
+ * */
+function getHomePopular()
+{
+	$url = 'https://api.themoviedb.org/3/movie/popular?api_key=4f4fc5ebbc928ddfae642382c709683b';
+
+	$client   = new \GuzzleHttp\Client();
+	$response = $client->request('GET', $url);
+	$json	  = $response->getBody();
+
+	$popularFilms = json_decode($json, true);
+	return $popularFilms;
+}
+
+function TestFilm()
+{
+	require_once '../vendor/autoload.php';
+	require_once '../vendor/php-tmdb/api/apikey.php';
+
+	$token = new \Tmdb\ApiToken('4f4fc5ebbc928ddfae642382c709683b');
+	$client = new \Tmdb\Client($token);
+
+	$repository = new \Tmdb\Repository\MovieRepository($client);
+	$topRated = $repository->getTopRated(array('page' => 3));
+
+	var_dump($topRated);
+	return $topRated;
 }

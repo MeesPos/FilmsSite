@@ -6,7 +6,8 @@
     "pecee/simple-router": "^4.2",
     "league/plates": "3.3.*",
     "ext-pdo": "*",
-    "guzzlehttp/guzzle": "^6.5"
+    "guzzlehttp/guzzle": "^6.5",
+    "php-tmdb/api": "~2.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"

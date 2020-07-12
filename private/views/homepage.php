@@ -35,5 +35,9 @@
 		</div>
 	</header>
 
+	<section id="movies">
+		<?php echo $popMovies['title']; ?>
+	</section>
+
 	<script src="<?php echo site_url('/js/nav.js') ?>"></script>
 </body>

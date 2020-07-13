@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    color: white;
 }
 
 body{
@@ -9,9 +10,20 @@ body{
     overflow-x: hidden;
 }
 
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
 // Variables etc.
 @import 'vars';
 
 // Page CSS
-@import 'nav_notloggedin';
 @import 'home';
+
+// Static Components
+@import 'nav_notloggedin';
+@import 'footer';

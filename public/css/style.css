@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: white;
 }
 
 body {
@@ -9,6 +10,159 @@ body {
   overflow-x: hidden;
 }
 
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#homeheader {
+  height: 60vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+}
+
+.home-intro {
+  width: 100vw;
+  height: 60vh;
+  background: linear-gradient(to right, rgba(18, 18, 18, 0.97), rgba(18, 18, 18, 0.78));
+}
+
+.home-information {
+  margin-left: 5vw;
+  padding-top: 10vh;
+}
+
+.home-information > h1 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 50px;
+}
+
+.homedesc {
+  color: white;
+  padding-top: 0.5vh;
+  width: 500px;
+}
+
+.home-information > a > button {
+  margin-top: 2vh;
+  border: 5px solid #FF2E2E;
+  border-radius: 50px;
+  font-size: 30px;
+  color: white;
+  font-weight: 600;
+  background: none;
+  width: 250px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.movielist > img {
+  max-width: 250px;
+}
+
+.movielist {
+  color: white;
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+#movies {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-top: -10vh;
+}
+
+.votescoreHome {
+  font-size: 25px;
+  text-align: center;
+  background-color: #FF2E2E;
+  width: 70px;
+  border-radius: 50px;
+  padding: 2px 0;
+  margin: 0 auto;
+  margin-bottom: -20px;
+  position: relative;
+  z-index: 999;
+}
+
+.homeTitle {
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+#aboutus {
+  margin-top: 5vh;
+}
+
+#aboutus > h2 {
+  font-size: 70px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#services {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.homeImg {
+  height: 80px;
+  margin: 0 auto;
+}
+
+.service > h3, .service > p {
+  text-align: center;
+  padding: 0 20%;
+}
+
+.service > h3 {
+  font-size: 23px;
+  margin-top: 1%;
+}
+
+.service > p {
+  margin-top: 1%;
+}
+
+.service {
+  margin-top: 5vh;
+}
+
+.service2 {
+  border-right: 2px solid #FF2E2E;
+  border-left: 2px solid #FF2E2E;
+}
+
+@media screen and (max-width: 768px) {
+  .home-information > h1 {
+    font-size: 40px;
+  }
+
+  .homedesc {
+    padding-right: 10vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .homedesc {
+    width: 80vw;
+  }
+
+  .home-information > h1 {
+    font-size: 25px;
+  }
+
+  .home-information > a > button {
+    width: 180px;
+    height: 60px;
+    font-size: 20px;
+  }
+}
 #navbar {
   display: flex;
   justify-content: space-around;
@@ -136,106 +290,43 @@ body {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-#homeheader {
-  height: 60vh;
-  width: 100vw;
-  background-repeat: no-repeat;
+footer {
+  background-color: #2A2A2A;
+  margin-top: 10vh;
 }
 
-.home-intro {
-  width: 100vw;
-  height: 60vh;
-  background: linear-gradient(to right, rgba(18, 18, 18, 0.97), rgba(18, 18, 18, 0.78));
-}
-
-.home-information {
-  margin-left: 5vw;
-  padding-top: 10vh;
-}
-
-.home-information > h1 {
-  text-transform: uppercase;
-  color: white;
-  font-size: 50px;
-}
-
-.homedesc {
-  color: white;
-  padding-top: 0.5vh;
-  width: 500px;
-}
-
-.home-information > a > button {
-  margin-top: 2vh;
-  border: 5px solid #FF2E2E;
-  border-radius: 50px;
-  font-size: 30px;
-  color: white;
-  font-weight: 600;
-  background: none;
-  width: 250px;
-  height: 70px;
-  cursor: pointer;
-}
-
-.movielist > img {
-  max-width: 250px;
-}
-
-.movielist {
-  color: white;
-  text-decoration: none;
-  margin: 0 auto;
-}
-
-#movies {
+#footertop {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  margin-top: -10vh;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.votescoreHome {
-  font-size: 25px;
-  text-align: center;
-  background-color: #FF2E2E;
-  width: 70px;
-  border-radius: 50px;
-  padding: 2px 0;
+.contact, .feedback, .terms {
+  display: inline-block;
   margin: 0 auto;
-  margin-bottom: -20px;
-  position: relative;
-  z-index: 999;
+  list-style: none;
+  margin-top: 5vh;
 }
 
-.homeTitle {
-  font-weight: 600;
+.contact > h4, .feedback > h4, .terms > h4 {
   font-size: 20px;
-  margin-top: 20px;
+  margin-bottom: 1vh;
 }
 
-@media screen and (max-width: 768px) {
-  .home-information > h1 {
-    font-size: 40px;
-  }
-
-  .homedesc {
-    padding-right: 10vw;
-  }
+.feedback > ul > li, .contact > ul > li, .terms > ul > li {
+  margin-bottom: 0.5vh;
 }
-@media screen and (max-width: 600px) {
-  .homedesc {
-    width: 80vw;
-  }
 
-  .home-information > h1 {
-    font-size: 25px;
-  }
+#belowfooter {
+  border-top: 1px solid white;
+  width: 100vw;
+  margin-top: 2%;
+}
 
-  .home-information > a > button {
-    width: 180px;
-    height: 60px;
-    font-size: 20px;
-  }
+.copyright {
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  font-size: 18px;
+  margin-left: 14.4vw;
 }
 
 /*# sourceMappingURL=style.css.map */

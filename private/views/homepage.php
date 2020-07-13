@@ -68,7 +68,46 @@
 			}
 		}
 		?>
+	</section></a>
+
+	<section id="aboutus">
+		<h2>The services</h2>
+		<div id="services">
+			<div class="service service1">
+				<center><img class="homeImg" src="<?php echo site_url('/img/filter.png') ?>" alt="Filter Icon"></center>
+				<h3>Filter Streaming platforms</h3>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+				Nam magnam, doloremque doloribus optio porro rem iste voluptatem 
+				commodi cumque tenetur praesentium in voluptate nobis minus eaque 
+				aspernatur debitis est. A!</p>
+			</div>
+
+			<div class="service service2">
+				<center><img class="homeImg" src="<?php echo site_url('/img/swipe.png') ?>" alt="Swipe Icon"></center>
+				<h3>Swipe to your show</h3>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+				Nam magnam, doloremque doloribus optio porro rem iste voluptatem 
+				commodi cumque tenetur praesentium in voluptate nobis minus eaque 
+				aspernatur debitis est. A!</p>
+			</div>
+
+			<div class="service service3">
+				<center><img class="homeImg" src="<?php echo site_url('/img/puzzle.png') ?>" alt="Advanced Filter Icon"></center>
+				<h3>Advanced filter system</h3>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+				Nam magnam, doloremque doloribus optio porro rem iste voluptatem 
+				commodi cumque tenetur praesentium in voluptate nobis minus eaque 
+				aspernatur debitis est. A!</p>
+			</div>
+		</div>
 	</section>
 
+	<?php if ($this->section('footer')) : ?>
+		<?php echo $this->section('footer') ?>
+	<?php else : ?>
+		<?php echo $this->fetch('_footer') ?>
+	<?php endif ?>
+
 	<script src="<?php echo site_url('/js/nav.js') ?>"></script>
+	<script src="https://kit.fontawesome.com/a82e000026.js"></script>
 </body>

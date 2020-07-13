@@ -75,6 +75,50 @@
     margin-top: 20px;
 }
 
+#aboutus{
+    margin-top: 5vh;
+}
+
+#aboutus > h2{
+    font-size: 70px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#services{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.homeImg{
+    height: 80px;
+    margin: 0 auto;
+}
+
+.service > h3, .service > p{
+    text-align: center;
+    padding: 0 20%;
+}
+
+.service > h3{
+    font-size: 23px;
+    margin-top: 1%;
+}
+
+.service > p{
+    margin-top: 1%;
+}
+
+.service{
+    margin-top: 5vh;
+}
+
+.service2{
+    border-right: 2px solid $red;
+    border-left: 2px solid $red;
+}
+
 @media screen and (max-width: 768px) {
     .home-information > h1{
         font-size: 40px;

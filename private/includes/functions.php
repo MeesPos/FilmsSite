@@ -92,13 +92,30 @@ function current_route_is($name)
  * */
 function getHomePopular()
 {
-	$url = 'https://api.themoviedb.org/3/movie/popular?api_key=4f4fc5ebbc928ddfae642382c709683b&total_results=5';
+	$url = 'https://api.themoviedb.org/3/movie/popular?api_key=4f4fc5ebbc928ddfae642382c709683b&language=en-US';
 
 	$client   = new \GuzzleHttp\Client();
 	$response = $client->request('GET', $url);
 	$json	  = $response->getBody();
 
 	$popularFilms = json_decode($json, true);
-	print_r($popularFilms);
+	// print_r($popularFilms);
 	return $popularFilms;
+}
+
+/**
+ * Get Genrelist
+ *
+ * @return string
+ */
+function getGenreList() {
+	$url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=4f4fc5ebbc928ddfae642382c709683b&language=en-US';
+
+	$client   = new \GuzzleHttp\Client();
+	$response = $client->request('GET', $url);
+	$details  = $response->getBody();
+
+	$genres = json_decode($details, true);
+	// print_r($genres);
+	return $genres;
 }

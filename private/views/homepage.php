@@ -39,15 +39,34 @@
 		<?php
 		$arrayCount = 0;
 		foreach ($popMovies as $row) {
-			foreach ($row as $movieArray) {
-				echo $movieArray['title'];
-				if ($arrayCount >= 5) {
-					exit;
+			if (is_array($row) && !empty($row)) {
+				foreach ($row as $movieArray) {
+					?> <a href="#" class="movielist homeMovie-<?php echo $arrayCount ?>">
+					<p class="votescoreHome"><?php echo $movieArray['vote_average']?></p>
+					<img src="https://image.tmdb.org/t/p/original<?php echo $movieArray['poster_path'] ?>" alt="Movie poster of <?php echo $movieArray['title'] ?>"><?php
+					?><p class="homeTitle"><?php echo $movieArray['title']; ?></p><?php
+
+					
+
+					$filmCat = $movieArray['genre_ids'];
+
+					$genreLists;
+						foreach ($genreLists as $row) {
+							foreach ($row as $genre) {
+								if ($filmCat === $genre['id']) {
+									echo $genre['name'];
+								}		
+							}
+						}
+						
+					if ($arrayCount >= 4) {
+						break;
+					}
+					$arrayCount += 1;	
+					?> </a> <?php
 				}
-				$arrayCount += 1;
 			}
-			// print_r($row);	
-		} 
+		}
 		?>
 	</section>
 

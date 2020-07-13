@@ -15,9 +15,10 @@ class WebsiteController {
 	public function home() {
 
 		$movieGet = getHomePopular();
+		$genreList = getGenreList();
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('homepage', ['popMovies' => $movieGet]);
+		echo $template_engine->render('homepage', ['popMovies' => $movieGet, 'genreLists' => $genreList]);
 
 	}
 
@@ -28,4 +29,3 @@ class WebsiteController {
 	}
 
 }
-

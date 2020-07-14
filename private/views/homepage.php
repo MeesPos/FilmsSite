@@ -46,8 +46,6 @@
 					<img src="https://image.tmdb.org/t/p/original<?php echo $movieArray['poster_path'] ?>" alt="Movie poster of <?php echo $movieArray['title'] ?>"><?php
 					?><p class="homeTitle"><?php echo $movieArray['title']; ?></p><?php
 
-					
-
 					$filmCat = $movieArray['genre_ids'];
 
 					$genreLists;

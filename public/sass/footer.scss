@@ -1,6 +1,7 @@
 footer{
     background-color: #2A2A2A;
     margin-top: 10vh;
+    width: 100vw;
 }
 
 #footertop{
@@ -26,7 +27,7 @@ footer{
 
 #belowfooter{
     border-top: 1px solid white;
-    width: 100vw;
+    width: 100%;
     margin-top: 2%;
 }
 
@@ -35,4 +36,27 @@ footer{
     margin-bottom: .5vh;
     font-size: 18px;
     margin-left: 14.4vw;
+}
+
+@media screen and (max-width: 550px) {
+    #footertop{
+        grid-template-columns: 1fr;
+    }
+
+    footer{
+        padding-bottom: .5vh;
+    }
+
+    .contact, .feedback, .terms{
+        margin: 0;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        text-align: center;
+    }
+
+    .copyright{
+        padding-bottom: 1.5vh;
+        margin-top: 2vh;
+        margin-left: 1.5vw;
+    }
 }

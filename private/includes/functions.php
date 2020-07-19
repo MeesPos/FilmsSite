@@ -85,17 +85,37 @@ function current_route_is($name)
 	return false;
 }
 
-function ApiConnection()
+/**
+ * Get the popular movies at this moment for Home page 
+ * 
+ * @return string
+ * */
+function getHomePopular()
 {
-	$url = 'https://api.themoviedb.org/3/movie/321?api_key=4f4fc5ebbc928ddfae642382c709683b';
+	$url = 'https://api.themoviedb.org/3/movie/popular?api_key=4f4fc5ebbc928ddfae642382c709683b&language=en-US';
 
-	// HTTP client aanmaken
-	$client = new \GuzzleHttp\Client();
-
-	// Request doen
+	$client   = new \GuzzleHttp\Client();
 	$response = $client->request('GET', $url);
 	$json	  = $response->getBody();
 
-	// JSON omzetten in een array met json_decode()
-	$film	= json_decode($json, true);
+	$popularFilms = json_decode($json, true);
+	// print_r($popularFilms);
+	return $popularFilms;
+}
+
+/**
+ * Get Genrelist
+ *
+ * @return string
+ */
+function getGenreList() {
+	$url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=4f4fc5ebbc928ddfae642382c709683b&language=en-US';
+
+	$client   = new \GuzzleHttp\Client();
+	$response = $client->request('GET', $url);
+	$details  = $response->getBody();
+
+	$genres = json_decode($details, true);
+	// print_r($genres);
+	return $genres;
 }

@@ -27,21 +27,20 @@
 						<form action="<?php echo site_url() ?>" method="POST">
 							<div class="registerInputs">
 								<div class="registerEmailInput">
-									<label for="registerEmail">Email <span class="red-text">*</span></label>
-									<input type="text" name="email" id="registerEmail" class="inputField">
+									<label for="registerEmail">Email <span class="red-text asterisk">*</span></label>
+									<input type="text" name="email" id="registerEmail" class="inputField" placeholder="Enter your email">
 								</div>
 								<div class="registerPasswordInput">
-									<label for="registerPassword">Password <span class="red-text">*</span></label>
-									<input type="password" name="password" id="registerPassword" class="inputField">
+									<label for="registerPassword">Password <span class="red-text asterisk">*</span></label>
+									<input type="password" name="password" id="registerPassword" class="inputField" placeholder="Enter your password">
 								</div>
 								<div class="registerRepeatPasswordInput">
-									<label for="registerRepeatPassword">Repeat Password <span class="red-text">*</span></label>
-									<input type="password" name="repeat-password" id="registerRepeatPassword" class="inputField">
+									<label for="registerRepeatPassword">Repeat Password <span class="red-text asterisk">*</span></label>
+									<input type="password" name="repeat-password" id="registerRepeatPassword" class="inputField" placeholder="Repeat your password">
 								</div>
 								<div class="registerUsernameInput">
-									<label for="registerUsername">Username <span class="red-text">*</span></label>
-									<input type="text" name="username" id="registerUsername" class="inputField">
-
+									<label for="registerUsername">Username <span class="red-text asterisk">*</span></label>
+									<input type="text" name="username" id="registerUsername" class="inputField" placeholder="Enter your username">
 								</div>
 							</div>
 							<div class="registerButtonDiv">
@@ -49,12 +48,17 @@
 							</div>
 						</form>
 						<div class="registerSmallText">
-							<h3><i><span class="red-text">*</span> By clicking Register you agree to the <span class="red-text">Terms and Conditions</span> and <span class="red-text">Privacy Statement</span></i></h3>
-							<p>Already have an account? <a>Sign in</a></p>
+							<h3><i><span class="red-text asterisk">*</span> By clicking register you agree to the <span class="red-text">Terms and Conditions</span> and <span class="red-text">Privacy Statement</span></i></h3>
+							<p>Already have an account? <a href="<?php echo url() ?>" class="red-text">Sign in</a></p>
 						</div>
 					</div>
 					<div class="registerRight">
-						<h2><span class="red-text"><?php echo '2323' ?></span> PEOPLE WERE BEFORE YOU JOIN <span class="red-text">TODAY </span> TO ACCESS</h2>
+						<h2><span class="red-text"><?php echo '2323' ?></span> PEOPLE WERE BEFORE YOU JOIN <span class="red-text">TODAY </span> TO ACCESS:</h2>
+						<ul class="registerList">
+							<li>Up-to-date advanced movie search system</li>
+							<li>Original movie swipe system</li>
+							<li>Advanced information about movies</li>
+						</ul>
 					</div>
 				</div>
 			</div>

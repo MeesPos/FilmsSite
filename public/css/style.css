@@ -243,13 +243,13 @@ a {
 
 .registerCard {
   width: 70%;
-  height: 60%;
+  height: 50%;
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
-  -ms-transform: translate(-50%, -55%);
-  transform: translate(-50%, -55%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .registerTagline {
@@ -273,7 +273,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  margin: 5% 5%;
+  margin: 3% 5%;
 }
 
 .registerInputs > div {
@@ -396,6 +396,103 @@ a {
   font-weight: 500;
 }
 
+@media screen and (max-width: 1400px) {
+  .inputField:placeholder-shown {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .inputField:placeholder-shown {
+    font-size: 14px;
+  }
+
+  .registerCardContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.1fr;
+  }
+
+  .registerCard {
+    height: 70%;
+    width: 80%;
+  }
+
+  .registerList {
+    margin-top: 20px;
+  }
+
+  .registerRight > h2 {
+    margin-top: 30px;
+  }
+
+  .registerSmallText > p {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .registerRight > h2 {
+    font-size: 22px;
+  }
+
+  .registerList {
+    font-size: 14px;
+  }
+
+  .registerCard {
+    height: 60%;
+    width: 80%;
+  }
+
+  .registerSmallText > h3 {
+    font-size: 10px;
+  }
+
+  .inputField:placeholder-shown {
+    font-size: 10px;
+  }
+
+  .inputField {
+    height: 30px;
+    padding-left: 5px;
+  }
+
+  .registerInputs > div > label {
+    font-size: 12px;
+  }
+
+  .asterisk {
+    font-size: 16px;
+  }
+
+  .registerInputs {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #registerSubmit {
+    margin-top: 10px;
+    width: 60%;
+    height: 30px;
+    font-size: 15px;
+    border: 2px solid #FF2E2E;
+  }
+}
+@media screen and (max-width: 360px) {
+  .registerCard {
+    height: 65%;
+    width: 80%;
+  }
+
+  .registerInputs > div > label {
+    font-size: 10px;
+  }
+
+  .asterisk {
+    font-size: 14px;
+  }
+}
 #navbar {
   display: flex;
   justify-content: space-around;

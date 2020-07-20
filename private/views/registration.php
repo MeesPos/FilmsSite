@@ -13,11 +13,11 @@
 </head>
 
 <body>
-	<div class="registerHomeButton">
-		<a href="<?php echo url('/') ?>">
-			<h2 class="red-text">WMNM</h2>
-		</a>
-	</div>
+<?php if ($this->section('nav_notloggedin')) : ?>
+		<?php echo $this->section('nav_notloggedin') ?>
+	<?php else : ?>
+		<?php echo $this->fetch('_nav_notloggedin') ?>
+	<?php endif ?>
 	<div class="registerCardContainer">
 		<div class="registerCard">
 			<h1 class="registerTagline">SIGN UP FOR <span class="red-text">WHAT'S MY NEXT MOVIE</span></h1>
@@ -64,5 +64,7 @@
 			</div>
 		</div>
 	</div>
+	<script src="<?php echo site_url('/js/nav.js') ?>"></script>
+
 	<script src="https://kit.fontawesome.com/a82e000026.js"></script>
 </body>

@@ -5,6 +5,11 @@
   color: white;
 }
 
+html {
+  height: auto;
+  width: 100vw;
+}
+
 body {
   background: #121212;
   overflow-x: hidden;
@@ -220,6 +225,49 @@ a {
     display: none;
   }
 }
+.red-text {
+  color: #FF2E2E;
+}
+
+.registerHomeButton {
+  font-size: 20px;
+  position: absolute;
+  top: 2.5%;
+  left: 1.5%;
+}
+
+.registerCardContainer {
+  display: relative;
+}
+
+.registerCard {
+  width: 70%;
+  height: 60%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -55%);
+  transform: translate(-50%, -55%);
+}
+
+.registerTagline {
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.registerCardBackground {
+  height: 100%;
+  border-top: 3px solid #FF2E2E;
+}
+
+.registerCardContent {
+  height: 100%;
+  background: rgba(73, 73, 73, 0.4);
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+}
+
 #navbar {
   display: flex;
   justify-content: space-around;

@@ -16,7 +16,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get( '/api', 'WebsiteController@api' )->name( 'api' );
 
 	// Registration & Login
-	SimpleRouter::get( 'registration', 'RegisterLoginController@registerHome' )->name( 'register-home' );
+	SimpleRouter::get( '/registration', 'RegistrationLoginController@registerHome' )->name( 'register-home' );
 
 
 	// STOP: Tot hier al je eigen URL's zetten

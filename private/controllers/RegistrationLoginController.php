@@ -15,7 +15,7 @@ class RegistrationLoginController {
 	public function registerHome() {
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('registerPage');
+		echo $template_engine->render('registration');
 
 	}
 

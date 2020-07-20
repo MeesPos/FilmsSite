@@ -6,7 +6,7 @@
         <ul id="menu-menu" class="navbar-ul">
             <li id="menu-item-8" class="menu-items menu-item"><a href="<?php echo url('home') ?>" <?php if (current_route_is('home')) : ?> class="active" <?php endif ?>>Home</a></li>
             <li id="menu-item-9" class="menu-items menu-item"><a href="#">Sign In</a></li>
-            <li id="menu-item-16" class="menu-items menu-item"><a href="#">Sign Up</a></li>
+            <li id="menu-item-16" class="menu-items menu-item"><a href="<?php echo url('register-home') ?>">Sign Up</a></li>
         </ul>
     </div>
 

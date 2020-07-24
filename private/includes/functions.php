@@ -108,7 +108,8 @@ function getHomePopular()
  *
  * @return string
  */
-function getGenreList() {
+function getGenreList()
+{
 	$url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=4f4fc5ebbc928ddfae642382c709683b&language=en-US';
 
 	$client   = new \GuzzleHttp\Client();
@@ -118,4 +119,86 @@ function getGenreList() {
 	$genres = json_decode($details, true);
 	// print_r($genres);
 	return $genres;
+}
+
+/**
+ *  Validates form, returns either an error message or POST data in an array.
+ * 
+ * Checks:
+ * - Password length
+ * - If valid email was entered
+ * - If password and repeat password are the same
+ * - If an input field was left open.
+ */
+function registrationFormValidation($post_data, $errors) {
+	$data = [];
+
+	// Checking whether an input field was left open. (In case someone removes required from html input)
+	foreach ( $post_data as $data_item) {
+		if ( ! isset($data_item) ) {
+			$errors['empty'] = 'Please fill in all fields.';
+			// If error, return and exit. Otherwise PHP errors.
+			return [
+				$data,
+				$errors
+			];
+		}
+	}
+
+	// Get information form post
+	$email		= filter_var($post_data['email'], FILTER_VALIDATE_EMAIL);
+	$password	= trim($post_data['password']);
+
+	// Putting other POST data in variables for easy storage
+	$rePassword	= trim($post_data['repeat-password']);
+	$username	= $post_data['username'];
+
+	// Check if unvalid email has been entered
+	if ( $email === false ) {
+		$errors['email'] = 'Please enter a valid email.';
+	}
+
+	// Check if password is 8 characters or more
+	if ( strlen($password) < 8 ) {
+		$errors['password'] = 'Please enter a password that is 8 or more characters.';
+	}
+
+	// Check if password and repeated password are equal
+	if ( ! $password === $rePassword ) {
+		$errors['password-repeat'] = "Your entered passwords don't match.";
+	}
+
+	$data = [
+		'email' 	 => $email,
+		'password' 	 => $password,
+		'rePassword' => $rePassword,
+		'username'	 => $username	
+	];
+
+	return [
+		$data,
+		$errors
+	];
+
+}
+
+/**
+ * Gets registration background image
+ * - ID of show or movie based on IMDB id!
+ * - Get IMDB id from url of movie or show
+ * - Returns backdrop path of image
+ */
+function getRegistrationBackground($show_id) {
+
+	$url = 'https://api.themoviedb.org/3/find/' . $show_id . '?api_key=4f4fc5ebbc928ddfae642382c709683b&external_source=imdb_id';
+
+	$client   = new \GuzzleHttp\Client();
+	$response = $client->request('GET', $url);
+	$details  = $response->getBody();
+
+	$movie_result = json_decode($details, true);
+
+	return $movie_result['movie_results'][0]['backdrop_path'];
+	
+
 }

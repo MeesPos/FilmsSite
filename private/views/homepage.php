@@ -47,13 +47,19 @@
 					?><p class="homeTitle"><?php echo $movieArray['title']; ?></p><?php
 
 					$filmCat = $movieArray['genre_ids'];
-
-					$genreLists;
+					print_r($filmCat);
+					
+					$rowAmount = count($filmCat);
+					$x = 0;
 						foreach ($genreLists as $row) {
 							foreach ($row as $genre) {
-								if ($filmCat === $genre['id']) {
+								if ($x <= $rowAmount) {
+									if ($filmCat[0] === $genre['id']) {
 									echo $genre['name'];
-								}		
+									}	
+								$x += 1;
+								}
+								
 							}
 						}
 						
@@ -107,5 +113,4 @@
 	<?php endif ?>
 
 	<script src="<?php echo site_url('/js/nav.js') ?>"></script>
-	<script src="https://kit.fontawesome.com/a82e000026.js"></script>
 </body>

@@ -260,6 +260,7 @@ a {
 .registerCardBackground {
   height: 100%;
   border-top: 3px solid #FF2E2E;
+  background-position: 50px !important;
 }
 
 .registerCardContent {

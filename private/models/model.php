@@ -81,3 +81,57 @@ function logUserIn($email) {
 	session_start();
 	$_SESSION['user_id'] = $userinfo['id'];
 }
+
+/**
+ * Change background image showID on registration or login page.
+ * - Enter movieID
+ * - Changes database entry in table admin_info based on what form on admin page was used
+ * - Default database column is registration_background
+ */
+function BackgroundChange($movieID, $where = 'registration_background') {
+	$connection = dbConnect();
+
+	if ( $where == 'registration_background' ) {
+		$sql = 'UPDATE 	`admin_info`
+				SET 	`registration_background` = :movieID 
+				WHERE 	`id`	 = :id';	
+	} else {
+		$sql = 'UPDATE 	`admin_info`
+				SET 	`login_background` = :movieID 
+				WHERE 	`id`	 = :id';	
+	}
+	
+
+	$statement = $connection->prepare($sql);
+
+	$params = [
+		'movieID'	=> $movieID,
+		'id' 		=> 1
+	];
+
+	$statement->execute($params);
+}
+
+/**
+ * Retrieves background image showID.
+ * - Based on what page you are on
+ * 
+ * Page choices are:
+ * - registration_background
+ * - login_background
+ */
+function getBackground($where) {
+	$connection = dbConnect();
+	$sql = 'SELECT * FROM `admin_info`';
+	$statement = $connection->query($sql);
+	
+	$background_data = $statement->fetch();
+
+	// Gives show ID from login or registration column to API calling function
+	if ( $where === 'registration_background') {
+		getBackgroundAndDisplay($background_data['registration_background']);
+	} else {
+		getBackgroundAndDisplay($background_data['login-background']);
+	}
+
+}

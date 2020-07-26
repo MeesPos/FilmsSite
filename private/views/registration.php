@@ -21,7 +21,7 @@
 	<div class="registerCardContainer">
 		<div class="registerCard">
 			<h1 class="registerTagline">SIGN UP FOR <span class="red-text">WHAT'S MY NEXT MOVIE</span></h1>
-			<div class="registerCardBackground" style="background: url(https://image.tmdb.org/t/p/original<?php echo getRegistrationBackground('tt6048922');?>);">
+			<div class="registerCardBackground" style="background: url(https://image.tmdb.org/t/p/original<?php getBackground('registration_background');?>);">
 				<div class="registerCardContent">
 					<div class="registerLeft">
 						<form action="<?php echo site_url('registrationProcessing') ?>" method="POST">

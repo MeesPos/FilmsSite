@@ -187,8 +187,10 @@ function registrationFormValidation($post_data, $errors) {
  * - ID of show or movie based on IMDB id!
  * - Get IMDB id from url of movie or show
  * - Returns backdrop path of image
+ * 
+ * @return string
  */
-function getRegistrationBackground($show_id) {
+function getBackgroundAndDisplay($show_id) {
 
 	$url = 'https://api.themoviedb.org/3/find/' . $show_id . '?api_key=4f4fc5ebbc928ddfae642382c709683b&external_source=imdb_id';
 
@@ -196,9 +198,14 @@ function getRegistrationBackground($show_id) {
 	$response = $client->request('GET', $url);
 	$details  = $response->getBody();
 
-	$movie_result = json_decode($details, true);
+	$show_or_movie_result = json_decode($details, true);
 
-	return $movie_result['movie_results'][0]['backdrop_path'];
+
+	// If it isn't a movie, it must be a show.
+	if ( isset($show_or_movie_result['movie_results'][0]) ) {
+		print $show_or_movie_result['movie_results'][0]['backdrop_path'];	
+	} else {
+		print $show_or_movie_result['tv_results'][0]['backdrop_path'];
+	}
 	
-
 }

@@ -4,7 +4,10 @@
     font-family: sans-serif;
     color: white;
 }
-
+html {
+    height: auto;
+    width: 100vw;
+}
 body{
     background: #121212;
     overflow-x: hidden;
@@ -23,6 +26,7 @@ a{
 
 // Page CSS
 @import 'home';
+@import 'registration';
 
 // Static Components
 @import 'nav_notloggedin';

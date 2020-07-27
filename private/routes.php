@@ -23,6 +23,8 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get( '/admin', 'AdminController@AdminHome' )->name( 'admin-home' );
 	SimpleRouter::post( '/backgroundChange', 'AdminController@BackgroundChange' )->name( 'admin-bgchange' );
 
+	// Overview
+	SimpleRouter::get( '/overview', 'OverviewController@overview' )->name( 'overview' );
 
 	// STOP: Tot hier al je eigen URL's zetten
 	SimpleRouter::get( '/not-found', function () {

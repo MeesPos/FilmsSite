@@ -51,6 +51,15 @@
     transition: all 0.3s ease;
 }
 
+.pro{
+    border: 2px solid $red;
+    padding: 10px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    background: none;
+    font-size: 20px;
+}
+
 @media screen and (max-width: 1024px) {
     .navbar-ul{
         width: 60vw!important;

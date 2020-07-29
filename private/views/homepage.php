@@ -47,22 +47,29 @@
 					?><p class="homeTitle"><?php echo $movieArray['title']; ?></p><?php
 
 					$filmCat = $movieArray['genre_ids'];
-					print_r($filmCat);
 					
 					$rowAmount = count($filmCat);
-					$x = 0;
-						foreach ($genreLists as $row) {
-							foreach ($row as $genre) {
-								if ($x <= $rowAmount) {
-									if ($filmCat[0] === $genre['id']) {
-									echo $genre['name'];
-									}	
-								$x += 1;
+					$apiGenreID = 0;
+					$filmGenreID = 0;
+					
+						for ( $filmGenreCounter = 0; $filmGenreCounter < $rowAmount; $filmGenreCounter++ ) {
+							// Loop through all genres available
+							for ($genreCounter = 0; $genreCounter <= 18; $genreCounter++) {
+
+								// Repeats this 18 times
+								if(  $genreLists['genres'][$apiGenreID]['id'] === $filmCat[$filmGenreID] ){
+									// Match = echo movie genre name
+								print $genreLists['genres'][$apiGenreID]['name'];
 								}
-								
+								$apiGenreID += 1;
 							}
-						}
+							$genreCounter = 0;
+							$apiGenreID = 0;
 						
+						$filmGenreID += 1;
+						print ' ';
+					 }
+					 
 					if ($arrayCount >= 4) {
 						break;
 					}

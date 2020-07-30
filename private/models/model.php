@@ -33,7 +33,7 @@ function isUsernameRegisteredCheck($username) {
 	$connection = dbConnect();
 	$sql			= 'SELECT * FROM `users` WHERE `username` = :username';
 	$statement 		= $connection->prepare($sql);
-	$statement->execute(['email' => $username]);
+	$statement->execute(['username' => $username]);
 
 	return ($statement->rowCount() === 0);
 }

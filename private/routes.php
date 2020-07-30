@@ -18,7 +18,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	// Registration & Login
 	SimpleRouter::get( '/registration', 'RegistrationLoginController@registerHome' )->name( 'register-home' );
 	SimpleRouter::post( '/registrationProcessing', 'RegistrationLoginController@registerProcessing' )->name( 'register-processing' );
-
+	SimpleRouter::get('/send-test-email', 'EmailController@sendTestEmail')->name( 'email.test');
 	// Admin
 	SimpleRouter::get( '/admin', 'AdminController@AdminHome' )->name( 'admin-home' );
 	SimpleRouter::post( '/backgroundChange', 'AdminController@BackgroundChange' )->name( 'admin-bgchange' );

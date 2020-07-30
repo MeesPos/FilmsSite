@@ -13,6 +13,8 @@ namespace Website\Controllers;
 class RegistrationLoginController {
 
 	public function registerHome() {
+		$users = getUsers();
+		print_r($users);
 
 		$template_engine = get_template_engine();
 		echo $template_engine->render('registration');
